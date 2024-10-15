@@ -22,8 +22,23 @@ font-weight:bold;">- <span>$ {quote.category}</span></p>
 `;
     //clear previous quotes
     randomQuote.innerHTML="";
-    
-    
 }
+//Event Listener for the show New Quote Button 
+document.getElementById("newQuote").addEventListener("click", displayRandomQuote);
 
+//function to add new quote dynamically
+function addQuote() {
+    const newQuoteText= document.getElementById("newQuoteCategory").value;
+    if(newQuoteText && newQuoteCategory) {
+        quotes:push({ text :newQuoteText, category: newQuoteCategory});
+        document.getElementById("newQuoteText").value-"";//Clear input fields
+
+        document.getElementById("newQuoteCategory").value="";
+        alert("New quote adde successfully!");
+    }else{
+        alert("Please fill i both the quote text and category.");
+    }
+}
+//Event listener for the Add quote button
+document.getElementById("addQuoteButton").addEventListener("click",addQuote);
 }
