@@ -20,6 +20,10 @@ background-color:#f9f9f9;">
 font-weight:bold;">- <span>$ {quote.category}</span></p>
 </div>
 `;
+    //clear previous quotes
+    randomQuote.innerHTML="";
+    
+    
 }
 
 }
