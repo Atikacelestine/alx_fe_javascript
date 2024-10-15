@@ -13,6 +13,13 @@ function showRandomQuote(){
 
 const randomIndex= Math.floor(Math.random()* quotes.length);
 const quote= quotes[randomIndex];
-quoteDisplay.innerHtml =`<p>${quote text}</p><p><strong>Category</strong>${quote.category}</p>`;
+quoteDisplay.innerHtml =` <div style= "border: 1px solid #ccc;
+padding:10px; border-radius: 5px;
+background-color:#f9f9f9;">
+<p style="text-align:right;
+font-weight:bold;">- <span>$ {quote.category}</span></p>
+</div>
+`;
+}
 
 }
