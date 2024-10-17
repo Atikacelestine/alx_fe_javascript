@@ -240,7 +240,7 @@ function postQuoteToServer(quote) {
   })
   .then(response => response.json())
   .then(data => {
-    console.log("Quote posted to server:", data);
+    console.log("Quotes synced with server!", data);
   })
   .catch(error => console.error("Error posting data to server:", error));
 }
