@@ -69,6 +69,27 @@ createAddQuoteForm();
         </div>
         }
         };
+
+// Function to export quotes array to a JSON file
+function exportQuotesToJson() {
+  const dataStr = JSON.stringify(quotes);
+  const dataBlob = new Blob([dataStr], { type: 'application/json' });
+  const url = URL.createObjectURL(dataBlob);
+
+  // Create a download link
+  const downloadLink = document.createElement('a');
+  downloadLink.href = url;
+  downloadLink.download = 'quotes.json';
+  downloadLink.click();
+
+  URL.revokeObjectURL(url); // Clean up the URL after the download
+}
+
+// Add Export Button
+const exportButton = document.createElement('button');
+exportButton.textContent = "Export Quotes to JSON";
+exportButton.addEventListener('click', exportQuotesToJson);
+document.body.appendChild(exportButton);
         
  function importFromJsonFile(event) {
     const fileReader = new FileReader();
