@@ -27,7 +27,7 @@ font-weight:bold;">- <span>$ {quote.category}</span></p>
 document.getElementById("newQuote").addEventListener("click", displayRandomQuote);
 
 //function to add new quote dynamically
-function createaddQuoteForm() {
+function createAddQuoteForm() {
     const newQuoteText= document.getElementById("newQuoteCategory").value;
     if(newQuoteText && newQuoteCategory) {
         quotes:push({ text :newQuoteText, category: newQuoteCategory});
