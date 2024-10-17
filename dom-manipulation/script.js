@@ -209,10 +209,16 @@ window.onload = function() {
 const serverQuotesUrl = "https://jsonplaceholder.typicode.com/posts";  // Placeholder URL for simulation
 
 // Function to simulate fetching data from the server
-function fetchQuotesFromServer() {
-  return fetch(serverQuotesUrl)
-    .then(response => response.json())
-    .then(data => {
+async function fetchQuotesFromServer() {
+  try{
+    const response=await
+    fetch(serverQuotesUrl);// wait for response
+    
+    if(!response.ok){
+    throw new Error("Failed to fetch data from the server.");
+    }
+    const data= await response.json(); //wait for response from the server
+
       // Simulate server response with an array of quotes
       const serverQuotes = data.map(post => ({
         text: post.title,
