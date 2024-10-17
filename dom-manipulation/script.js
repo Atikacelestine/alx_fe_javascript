@@ -38,6 +38,7 @@ function createAddQuoteForm() {
     }else{
         alert("Please fill i both the quote text and category.");
     }
+    document.body.appendChild(createElement);
 }
 //Event listener for the Add quote button
 document.getElementById("CreateaddQuoteButton").addEventListener("click",addQuote);
